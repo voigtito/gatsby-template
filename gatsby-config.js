@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
- const siteMetadata = require('./config/metadata');
+const siteMetadata = require('./config/metadata');
 
 module.exports = {
   siteMetadata: {
@@ -52,7 +52,14 @@ module.exports = {
       options: {
         siteUrl: `https://www.example.com`,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: [`**/styles.js`],
+      },
+    },
     `gatsby-plugin-offline`
   ]
 }
